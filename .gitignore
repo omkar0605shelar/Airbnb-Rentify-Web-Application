@@ -1,0 +1,8 @@
+node_modules/
+.env
+uploads/
+public/temp/
+.DS_Store
+npm-debug.log
+yarn-error.log
+.pnpm-store/
