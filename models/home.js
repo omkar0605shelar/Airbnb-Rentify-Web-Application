@@ -1,4 +1,3 @@
-const ObjectId = require("mongodb");
 const mongoose = require("mongoose");
 
 const homeSchema = new mongoose.Schema(
@@ -24,12 +23,5 @@ const homeSchema = new mongoose.Schema(
     rulesFile:String
   }
 )
-
-// Pre hooks
-// homeSchema.pre("findOneAndDelete", async function(next) {
-//   const homeId = this.getQuery()["_id"];
-//   await Favourite.deleteMany({homeId : homeId});
-//   next();
-// })
 
 module.exports = mongoose.model("Home", homeSchema);
