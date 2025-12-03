@@ -4,14 +4,16 @@
   <nav>
     <ul>
       <!-- Left section: Brand -->
-      <li class="brand">
-        <a href="/">Airbnb</a>
+      <li>
+        <a href="/" class="links">
+          <i class="fas fa-home"></i> Airbnb
+        </a>
       </li>
 
       <!-- Right section: Menu items -->
       <div class="nav-links">
         <% if (isLoggedIn) { %>
-          <% if(user && user.userType === 'guest') { %>
+          <% if(user && user.userType==='guest' ) { %>
             <li>
               <a href="/store/home-list" class="links">Home List</a>
             </li>
@@ -21,32 +23,32 @@
             <li>
               <a href="/store/favourite-list" class="links">Favourite List</a>
             </li>
-          <% } else { %>
-            <li>
-              <a href="/host/add-home" class="links">Add Home</a>
-            </li>
-            <li>
-              <a href="/host/host-home-list" class="links">Host Homes</a>
-            </li>
-          <% } %>
-        <% } %>
+            <% } else { %>
+              <li>
+                <a href="/host/add-home" class="links">Add Home</a>
+              </li>
+              <li>
+                <a href="/host/host-home-list" class="links">Host Homes</a>
+              </li>
+              <% } %>
+                <% } %>
 
-        
-        <% if (!isLoggedIn) { %>
-          <li class="auth-btn">
-            <a href="/signup" class="login-btn">Sign Up</a>
-          </li>
 
-          <li class="auth-btn">
-            <a href="/login" class="login-btn">Login</a>
-          </li>
-        <% } else { %>
-          <li>
-            <form action="/logout" method="POST">
-              <button type="submit" class="logout-btn">Logout</button>
-            </form>
-          </li>
-        <% } %>
+                  <% if (!isLoggedIn) { %>
+                    <li class="auth-btn">
+                      <a href="/signup" class="login-btn">Sign Up</a>
+                    </li>
+
+                    <li class="auth-btn">
+                      <a href="/login" class="login-btn">Login</a>
+                    </li>
+                    <% } else { %>
+                      <li>
+                        <form action="/logout" method="POST">
+                          <button type="submit" class="logout-btn">Logout</button>
+                        </form>
+                      </li>
+                      <% } %>
       </div>
     </ul>
   </nav>

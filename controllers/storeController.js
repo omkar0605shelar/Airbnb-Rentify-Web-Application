@@ -19,7 +19,7 @@ exports.getIndex = (req, res, next) => {
   Home.find().then((registerHomes) => 
     res.render('store/index', {
       registerHomes : registerHomes,
-      pageTitle : 'Index Page',
+      pageTitle : 'Airbnb - Rentify Web Application',
       currentPage : 'home',
       isLoggedIn : req.session.isLoggedIn,
       user:req.session.user
